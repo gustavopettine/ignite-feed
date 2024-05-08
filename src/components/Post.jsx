@@ -1,4 +1,5 @@
 import avatar from '../assets/avatar.png';
+import { Comment } from './Comment';
 
 import styles from './Post.module.css';
 
@@ -40,6 +41,10 @@ export function Post() {
                     <button type="submit">Publish</button>
                 </footer>
             </form>
+
+            <div className={styles.commentList}>
+                <Comment />
+            </div>
         </article>
     );
 }
