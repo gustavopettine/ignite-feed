@@ -11,7 +11,7 @@ const posts = [
   {
     id: 1,
     author: {
-      avatar: {avatar},
+      avatar: avatar,
       name: 'Gustavo Pettine',
       role: 'Web Developer'
     },
