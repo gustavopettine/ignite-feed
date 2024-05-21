@@ -1,35 +1,37 @@
-import avatar from '../assets/avatar.png';
+import { format, formatDistanceToNow } from 'date-fns';
 
 import { Comment } from './Comment';
 import { Avatar } from './Avatar';
 
 import styles from './Post.module.css';
 
-export function Post() {
+export function Post({ author, publishedAt, content }) {
+
+    const publishedDateFormatted = format(publishedAt, "LLLL do 'at' KK:mm aaaa");
+    const publishedDateRelativeToNow = formatDistanceToNow(publishedAt, {addSuffix: true});
+
     return (
         <article className={styles.post}>
             <header>
                 <div className={styles.author}>
-                    <Avatar src={avatar} />
+                    <Avatar src={author.avatar} />
                     <div className={styles.authorInfo}>
-                        <strong>Gustavo Pettine</strong>
-                        <span>Web Developer</span>
+                        <strong>{author.name}</strong>
+                        <span>{author.role}</span>
                     </div>
                 </div>
 
-                <time title="May 1st at 00:30h" dateTime="2024-05-01 00:30:00">Published 1 hour ago</time>
+                <time title={publishedDateFormatted} dateTime={publishedAt.toISOString()}>
+                    {publishedDateRelativeToNow}
+                </time>
             </header>
 
             <div className={styles.content}>
-                <p>Hey guys 👋</p>
-
-                <p>
-                    I just added another project to my portfolio. 
-                    It's a project I did at NLW Return, a Rocketseat event. 
-                    The name of the project is Ignite Feed 🚀
-                </p>
-
-                <p><a href="#">#newproject #nlw #rocketseat</a></p>
+                {content.map(line => {
+                    if (line.type === 'paragraph') {
+                        return <p>{line.content}</p>
+                    }
+                })}
             </div>
 
             <form className={styles.commentForm}>
