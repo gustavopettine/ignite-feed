@@ -1,8 +1,35 @@
-# React + Vite
+<h1 align="center">
+  Ignite Feed
+</h1>
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+<p align="center">
+  Ignite Feed is interactive software where users can share posts and engage with other users' content through comments and likes. The aim is to promote discussions and exchanges of ideas in a dynamic and collaborative environment.
+</p>
 
-Currently, two official plugins are available:
+<p align="center">
+  <a href="#usage">Usage</a> •
+  <a href="#preview">Preview</a> •
+  <a href="#license">License</a>
+</p>
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Usage
+
+```sh
+git clone https://github.com/gustavopettine/ignite-feed
+
+cd ignite-feed
+
+npm install
+
+npm run dev
+```
+
+## Preview
+
+### Home page
+
+![Screenshot](/assets/home_page.png)
+
+## License
+
+MIT
